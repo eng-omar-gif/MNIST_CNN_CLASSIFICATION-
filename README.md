@@ -1,79 +1,133 @@
-# Handwritten Digit Recognition using CNN (MNIST)
+# 🧠 Handwritten Digit Recognition – CNN Web Application
 
-## 📌 Project Overview
-This project implements a **Convolutional Neural Network (CNN)** to recognize handwritten digits from the **MNIST dataset**.  
-The model is built using **TensorFlow and Keras** and demonstrates a complete deep learning workflow including data preprocessing, augmentation, model training, evaluation, and error analysis.
-
-The goal is to accurately classify grayscale images of handwritten digits (0–9) into their respective classes.
+An **interactive web application** that recognizes handwritten digits using a **Convolutional Neural Network (CNN)** trained on the **MNIST dataset**. Users can draw digits directly in the browser or upload an image and receive instant predictions with confidence scores and full probability distributions.
 
 ---
 
-## 🧠 Dataset
-- **Name:** MNIST Handwritten Digits
-- **Images:** 28 × 28 grayscale images
-- **Classes:** 10 (digits 0–9)
-- **Source:** Keras built-in dataset
+## 📌 Overview
 
-The dataset is split into training and testing sets.
+This project combines **Deep Learning** and **Web Development** to deliver a real-time handwritten digit recognition system. A trained CNN model powers the backend, while a clean web interface enables intuitive user interaction.
+
+The application provides:
+
+* Predicted digit (0–9)
+* Confidence score
+* Complete softmax probability distribution
+
+---
+
+## ✨ Features
+
+* ✍️ Draw digits using an interactive canvas
+* 📤 Upload digit images (PNG / JPG)
+* 🔢 Real-time digit prediction
+* 📊 Confidence score display
+* 📈 Softmax probabilities visualization (bar chart)
+* 🧹 Clear canvas functionality
+
+---
+
+## 🧠 Model Information
+
+* **Dataset:** MNIST Handwritten Digits
+* **Image Size:** 28 × 28 (grayscale)
+* **Classes:** 10 (digits 0–9)
+* **Model Type:** Convolutional Neural Network (CNN)
+* **Output Layer:** Softmax
 
 ---
 
 ## ⚙️ Technologies Used
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- TensorFlow
-- Keras
-- Scikit-learn
+
+* **Python**
+* **Flask**
+* **TensorFlow / Keras**
+* **NumPy**
+* **OpenCV**
+* **HTML**
+* **CSS**
+* **JavaScript**
 
 ---
 
-## 🏗️ Model Architecture
-The CNN architecture consists of:
-- Convolutional layers for feature extraction
-- Max pooling layers for spatial downsampling
-- Batch normalization for training stability
-- Dropout layers to reduce overfitting
-- Fully connected (Dense) layers
-- Softmax output layer for multi-class classification
+## 📁 Project Structure
+
+```
+MNIST_CNN_Project/
+│── app.py                 # Flask application
+│── mnist_cnn.h5           # Trained CNN model
+│── README.md              # Project documentation
+│── templates/
+│   └── index.html         # Frontend UI
+
+```
 
 ---
 
-## 🔄 Data Preprocessing
-- Reshaping images to include channel dimension `(28, 28, 1)`
-- Normalizing pixel values to the range `[0, 1]`
-- One-hot encoding of labels
-- Data augmentation (rotation, shifting, zooming)
+## 🔄 Image Preprocessing Pipeline
+
+Before inference, each input image goes through the following preprocessing steps to match the MNIST format:
+
+1. Convert image to grayscale
+2. Resize to **28 × 28**
+3. Invert colors (white digit on black background)
+4. Normalize pixel values to **[0, 1]**
+5. Reshape to **(1, 28, 28, 1)**
 
 ---
 
-## 🚀 Training
-- Optimizer: Adam
-- Loss Function: Categorical Crossentropy
-- Metrics: Accuracy
-- Validation performed on the test set
-- Early stopping used to prevent overfitting
+## 🚀 How to Run the Project
+
+### 1️⃣ Create a virtual environment (optional but recommended)
+
+```bash
+python -m venv .venv
+```
+
+### 2️⃣ Activate the virtual environment
+
+**Windows**
+
+```bash
+.venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source .venv/bin/activate
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+pip install flask tensorflow numpy opencv-python
+```
+
+### 4️⃣ Run the Flask application
+
+```bash
+python app.py
+```
+
+### 5️⃣ Open the application in your browser
+
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-## 📊 Evaluation
-Model performance is evaluated using:
-- Accuracy and loss curves
-- Classification report (precision, recall, F1-score)
-- Confusion matrix
-- Per-class accuracy
-- Visualization of misclassified samples
+## 📊 Example Output
+
+* **Predicted Digit:** 3
+* **Confidence:** 97.82%
+* **Softmax Probabilities:** Displayed for all digits (0–9) in a bar chart
+
 
 ---
 
-## 💾 Model Saving
-The trained CNN model is saved in HDF5 format (`.h5`) for future inference or deployment.
+## 🧑‍💻 Author
 
----
-
-## 📈 Results
-The model achieves high accuracy on the MNIST test dataset, demonstrating the effectiveness of CNNs for image classification tasks.
-
+Developed as a **full-stack deep learning project**, combining Machine Learning and Web Application development.
 
