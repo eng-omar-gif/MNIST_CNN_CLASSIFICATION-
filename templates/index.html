@@ -268,6 +268,24 @@
             margin: 30px 0;
             border-radius: 2px;
         }
+
+        .image-preview {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .image-preview img {
+            max-width: 280px;
+            max-height: 280px;
+            border: 4px solid #153be2;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(21, 59, 226, 0.3);
+            background: #f0f0f0;
+        }
+
+        .image-preview.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -305,7 +323,10 @@
         <div class="card upload-section">
             <h3>📤 Upload an Image</h3>
             <div class="file-input-wrapper">
-                <input type="file" id="upload" accept="image/*">
+                <input type="file" id="upload" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <div class="image-preview hidden" id="imagePreview">
+                <img id="uploadedImage" alt="Uploaded image preview">
             </div>
             <button onclick="predictUpload()">Predict Uploaded Image</button>
         </div>
@@ -383,6 +404,21 @@ function clearCanvas() {
     resultDiv.innerHTML = "";
     resultDiv.classList.add("hidden");
     document.getElementById("probabilities").innerHTML = "";
+}
+
+// Preview uploaded image
+function previewImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = document.getElementById("imagePreview");
+            const img = document.getElementById("uploadedImage");
+            img.src = e.target.result;
+            preview.classList.remove("hidden");
+        };
+        reader.readAsDataURL(file);
+    }
 }
 
 // Predict from canvas
