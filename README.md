@@ -55,7 +55,7 @@ The application provides:
 ```
 MNIST_CNN_Project/
 │── app.py                 # Flask application
-│── mnist_cnn.h5           # Trained CNN model
+│── mnist_model_saved.h5   # Trained CNN model
 │── README.md              # Project documentation
 │── templates/
 │   └── index.html         # Frontend UI
@@ -115,19 +115,10 @@ python app.py
 ```
 http://127.0.0.1:5000
 ```
-
----
-
-## 📊 Example Output
-
-* **Predicted Digit:** 3
-* **Confidence:** 97.82%
-* **Softmax Probabilities:** Displayed for all digits (0–9) in a bar chart
-
-
 ---
 
 ## 🧑‍💻 Author
 
 Developed as a **full-stack deep learning project**, combining Machine Learning and Web Application development.
+
 
