@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #021156 0%, #2053e1 50%, #1d438a 100%);
+            background: linear-gradient(135deg, #171c7a 0%, #000000 50%, #130b8d 100%);
             min-height: 100vh;
             padding: 20px;
             color: #333;
@@ -55,7 +55,7 @@
         }
 
         .project-overview h2 {
-            color: #1e3c72;
+            color: #000000;
             font-size: 1.8em;
             margin-bottom: 15px;
             display: flex;
@@ -71,7 +71,7 @@
         }
 
         .project-overview .highlight {
-            background: linear-gradient(120deg, #2053e1 0%, #1d438a 100%);
+            background: linear-gradient(120deg, #000001 0%, #062154 100%);
             color: white;
             padding: 20px;
             border-radius: 15px;
@@ -145,7 +145,7 @@
             cursor: pointer;
             border: none;
             border-radius: 10px;
-            background: linear-gradient(135deg, #2053e1 0%, #1d438a 100%);
+            background: linear-gradient(135deg, #000000 0%, #0e11b2 100%);
             color: white;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(32, 83, 225, 0.4);
@@ -172,7 +172,7 @@
 
         input[type="file"] {
             padding: 10px;
-            border: 2px dashed #2053e1;
+            border: 2px dashed #203778;
             border-radius: 10px;
             background: #f0f4ff;
             cursor: pointer;
@@ -181,7 +181,7 @@
         }
 
         input[type="file"]:hover {
-            border-color: #153be2;
+            border-color: #000000;
             background: #e8edff;
         }
 
@@ -292,15 +292,15 @@
 
 <div class="container">
     <div class="header">
-        <h1>✍️ Handwritten Digit Recognition</h1>
+        <h1>Handwritten Digit Recognition</h1>
         <p>Using Convolutional Neural Network (CNN) - MNIST Dataset</p>
     </div>
 
     <div class="project-overview">
-        <h2>📌 Project Overview</h2>
+        <h2>Project Overview</h2>
         <p>
             This project implements a <strong>Convolutional Neural Network (CNN)</strong> to recognize handwritten digits from the MNIST dataset.
-            The model is built using <strong>TensorFlow</strong> and <strong>Keras</strong> and demonstrates a complete deep learning workflow including 
+            The model is built using <strong>TensorFlow</strong> and <strong>Keras</strong> and demonstrates a complete deep learning workflow including
             data preprocessing, augmentation, model training, evaluation, and error analysis.
         </p>
         <div class="highlight">
@@ -310,7 +310,7 @@
 
     <div class="main-content">
         <div class="card">
-            <h3>🎨 Draw a Digit</h3>
+            <h3>Draw a Digit</h3>
             <div class="canvas-container">
                 <canvas id="canvas" width="280" height="280"></canvas>
                 <div class="button-group">
@@ -321,7 +321,7 @@
         </div>
 
         <div class="card upload-section">
-            <h3>📤 Upload an Image</h3>
+            <h3>Upload an Image</h3>
             <div class="file-input-wrapper">
                 <input type="file" id="upload" accept="image/*" onchange="previewImage(event)">
             </div>
@@ -477,7 +477,7 @@ function showResult(data) {
     // Scroll to results
     resultDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
-    let probsHTML = "<h3>📊 Softmax Probabilities</h3>";
+    let probsHTML = "<h3>Softmax Probabilities</h3>";
     data.probabilities.forEach((p, i) => {
         const percentage = (p * 100).toFixed(2);
         probsHTML += `
@@ -494,7 +494,7 @@ function showResult(data) {
     });
 
     document.getElementById("probabilities").innerHTML = probsHTML;
-    
+
     // Scroll to probabilities
     document.getElementById("probabilities").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
